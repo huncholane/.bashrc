@@ -57,7 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\033[38;5;208m\](.Y.) \u:\W ==D\$\[\033[0m\] '
+    PS1='\[\033[38;5;208m\]\u:\W\n$ \$\[\033[0m\] '
 else
     PS1='${debian_chroot:+($debian_chroot)}$(whoami)@\h:$(basename "${PWD}" | sed "s/[^/]*$//")/\W\$ '
 fi
