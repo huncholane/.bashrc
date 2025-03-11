@@ -8,10 +8,9 @@ highlight() {
     status=$?
     echo -e "$results" | sed "s|^.*$(pwd).*$|$(printf '\033[0;34m')\0$(printf '\033[0m')|g"
 
-    if [ $status -ne 0 ]; then
-        return $status
-    else
+    if [ $status=0 ]; then
         return 69 # 69 becomes your new success code
     fi
+    return $status # Return original error code
 }
 trap highlight DEBUG
