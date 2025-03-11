@@ -1,7 +1,7 @@
 #!/bin/bash
 # set window_is_new for new windows
 # make this executable in home directory
-# then you just do ./tmuxprofile.sh from root to open
+# then you just do ./session.sh from root to open
 
 is_new_window=true
 
