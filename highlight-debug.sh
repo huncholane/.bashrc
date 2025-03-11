@@ -4,7 +4,7 @@ highlight() {
     if [ "$BASH_LOADED" = false ]; then
         return 0 # Return 0 lets the command run how it normally would
     fi
-    results=$(eval "$BASH_COMMAND")
+    results=$(eval "$BASH_COMMAND" 2>&1)
     status=$?
     if [ -n "$results" ]; then # Prevent highlighting if no results
         echo -e "$results" | sed "s|^.*$(pwd).*$|$(printf '\033[0;34m')\0$(printf '\033[0m')|g"
